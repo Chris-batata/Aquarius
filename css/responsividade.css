@@ -1,0 +1,115 @@
+/* ============================================================
+   CSS Global de Responsividade Suave - Compatível com Bootstrap
+   ============================================================ */
+
+/* ---- Ajustes Gerais ---- */
+html, body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---- Tipografia adaptável sem distorcer layout ---- */
+body {
+  font-size: 1rem;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+h1, h2, h3 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* ============================================================
+   BREAKPOINTS SUAVES (mantêm o layout, ajustam só o essencial)
+   ============================================================ */
+
+/* 📱 Celulares muito pequenos (ex: iPhone SE) */
+@media (max-width: 480px) {
+  body { font-size: 0.92rem; }
+  h1 { font-size: 1.4rem; }
+  h2 { font-size: 1.2rem; }
+
+  .container, .container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Mantém estrutura centralizada */
+  .row, [class*="col-"] {
+    text-align: inherit;
+  }
+}
+
+/* 📱 Celulares médios (ex: iPhone XR, Galaxy S8+) */
+@media (min-width: 481px) and (max-width: 767px) {
+  body { font-size: 0.95rem; }
+  h1 { font-size: 1.6rem; }
+
+  /* Linha da timeline visível e à esquerda */
+  .history-wrapper:after {
+    left: 25px;
+    transform: none;
+  }
+
+  .timeline-box {
+    padding: 0 0 0 80px;
+  }
+
+  .year {
+    left: 45px;
+    transform: translateY(-50%);
+  }
+}
+
+/* 📲 Tablets (ex: iPad Mini, iPad Air) */
+@media (min-width: 768px) and (max-width: 991px) {
+  body { font-size: 1rem; }
+  h1 { font-size: 1.8rem; }
+
+  .container {
+    max-width: 95%;
+  }
+
+  /* Linha um pouco mais à esquerda para centralizar visual */
+  .history-wrapper:after {
+    left: 40px;
+  }
+
+  .timeline-box {
+    padding: 0 0 0 100px;
+  }
+}
+
+/* 💻 Notebooks pequenos e tablets horizontais */
+@media (min-width: 992px) and (max-width: 1199px) {
+  body { font-size: 1.05rem; }
+
+  .container {
+    max-width: 90%;
+  }
+
+  /* Mantém alinhamento da timeline */
+  .history-wrapper:after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* 🖥️ Monitores grandes */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  body { font-size: 1.1rem; }
+}
+
+/* 🖥️💎 Telas ultrawide ou 4K */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
