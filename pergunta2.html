@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Aquarius - Quiz</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicon -->
+  <link href="img/logo-aquarius.png" rel="icon">
+
+  <!-- Fontes locais -->
+  <link href="css/fonts.css" rel="stylesheet">
+
+  <!-- Ícones locais -->
+  <link href="lib/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="lib/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/responsividade.css" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <link href="css/my.style.css" rel="stylesheet">
+</head>
+
+<body class="perguntas">
+  <!-- Spinner Start -->
+  <div id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-grow text-primary" role="status"></div>
+  </div>
+  <!-- Spinner End -->
+
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-lg-0 px-lg-5 wow fadeIn navcor" data-wow-delay="0.1s">
+    <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
+      <h1 class="text">Aquarius</h1>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav mx-auto p-4 p-lg-0">
+        <a href="index.html" class="nav-item nav-link">Início</a>
+        <a href="etec.html" class="nav-item nav-link">ETEC</a>
+        <a href="sobre.html" class="nav-item nav-link">Sobre</a>
+        <a href="informatica.html" class="nav-item nav-link">Informática</a>
+        <a href="quantico.html" class="nav-item nav-link active">Quantico</a>
+        <a href="futuro.html" class="nav-item nav-link">Futuro</a>
+        <div class="nav-item dropdown">
+          <a href="projeto.html" class="nav-link" data-bs-toggle="dropdown"
+            onclick="window.location='projeto.html'">Créditos</a>
+          <div class="dropdown-menu m-0">
+            <a href="bibliografia.html" class="dropdown-item">Bibliografia</a>
+          </div>
+        </div>
+        <a href="contato.html" class="nav-item nav-link">Contato</a>
+
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar End --><br><br><br><br><br>
+  <div class="container perguntas-container">
+    <div class="pergunta-box">
+      <h2 class="texto-quiz">2. Qual analogia foi usada para explicar a superposição dos qubits?</h2>
+      <form id="quiz-form">
+        <label class="opcao">
+          <input type="radio" name="resposta" value="0">
+          Um peixe nadando em direções opostas.
+        </label>
+        <label class="opcao">
+          <input type="radio" name="resposta" value="1">
+          Um polvo se movendo em todas as direções ao mesmo tempo.
+        </label>
+        <label class="opcao">
+          <input type="radio" name="resposta" value="2">
+          Um mergulhador explorando uma ilha por vez.
+        </label>
+        <label class="opcao">
+          <input type="radio" name="resposta" value="3">
+          Um barco navegando em alto mar.
+        </label>
+        <button type="button" class="perguntas-button" onclick="verificarResposta()">Responder</button>
+      </form>
+    </div>
+
+    <div id="feedback" class="feedback-box"></div>
+    <div id="feedback" class="feedback-box"></div>
+
+    <div id="botoes-navegacao" style="display: none;" class="navegacao">
+      <button onclick="window.location.href='pergunta1.html'" class="btn-voltar perguntas-button">Voltar</button>
+      <button onclick="window.location.href='pergunta3.html'" class="btn-continuar perguntas-button">Continuar</button>
+    </div>
+
+    <br><br><br>
+    <div class="dica-box">
+      <p><strong>Dica do Peixe-Voador: </strong> Os qubits não precisam escolher apenas uma direção—eles exploram todas
+        ao mesmo tempo!</p>
+    </div>
+  </div>
+
+  <script>
+    function verificarResposta() {
+      const resposta = document.querySelector('input[name="resposta"]:checked');
+      const feedback = document.getElementById("feedback");
+      const continuar = document.getElementById("btn-continuar");
+      const opcoes = document.querySelectorAll('.opcao');
+
+      opcoes.forEach(o => o.classList.remove('correta', 'errada'));
+
+      if (!resposta) {
+        feedback.innerHTML = "<p style='color: yellow;'>Por favor, selecione uma opção.</p>";
+        continuar.style.display = "none";
+        return;
+      }
+
+      const correta = 1;
+
+      if (parseInt(resposta.value) === correta) {
+        feedback.innerHTML = "<p style='color: green; font-weight: bold;'>Resposta correta!</p>";
+        opcoes[correta].classList.add('correta');
+      } else {
+        feedback.innerHTML = "<p style='color: red; font-weight: bold;'>Resposta incorreta!</p>";
+        opcoes[correta].classList.add('correta');
+        resposta.parentElement.classList.add('errada');
+      }
+
+      document.getElementById("botoes-navegacao").style.display = "flex";
+    }
+
+    document.querySelectorAll('.opcao').forEach(opcao => {
+      opcao.addEventListener('click', () => {
+        document.querySelectorAll('.opcao').forEach(o => o.classList.remove('selected'));
+        opcao.classList.add('selected');
+        opcao.querySelector('input').checked = true;
+      });
+    });
+
+  </script>
+  <!-- Copyright Start -->
+  <div class="container-fluid rodape text-light py-4 wow fadeIn text-center" data-wow-delay="0.1s">
+    <div class="container">
+      <p class="mb-0">Aquarius 2025 &copy; Todos os direitos reservados.<br> Trabalho Acadêmico sem fins lucrativos.</p>
+    </div>
+  </div>
+  <!-- Copyright End -->
+
+  <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5" />
+        </svg></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="lib2/wow/wow.min.js"></script>
+  <script src="lib2/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
