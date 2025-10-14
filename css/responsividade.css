@@ -107,3 +107,23 @@ h1, h2, h3 {
   }
 }
 
+
+
+@media (max-width: 991px) {
+  .year {
+    left: 55px !important; /* move o balão um pouco pra direita */
+  }
+
+  .year:before {
+    left: -10px !important; /* reposiciona a setinha */
+  }
+
+  .history-wrapper:after {
+    left: 25px !important;
+  }
+
+  .timeline-box {
+    padding-left: 100px !important;
+  }
+}
+
