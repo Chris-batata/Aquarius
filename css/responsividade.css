@@ -1,7 +1,3 @@
-/* ============================================================
-   CSS Global de Responsividade Suave - Compatível com Bootstrap
-   ============================================================ */
-
 /* ---- Ajustes Gerais ---- */
 html, body {
   scroll-behavior: smooth;
@@ -26,11 +22,8 @@ h1, h2, h3 {
   margin-bottom: 0.5em;
 }
 
-/* ============================================================
-   BREAKPOINTS SUAVES (mantêm o layout, ajustam só o essencial)
-   ============================================================ */
 
-/* 📱 Celulares muito pequenos (ex: iPhone SE) */
+/* Celulares muito pequenos (ex: iPhone SE) */
 @media (max-width: 480px) {
   body { font-size: 0.92rem; }
   h1 { font-size: 1.4rem; }
@@ -47,7 +40,7 @@ h1, h2, h3 {
   }
 }
 
-/* 📱 Celulares médios (ex: iPhone XR, Galaxy S8+) */
+/* Celulares médios (ex: iPhone XR, Galaxy S8+) */
 @media (min-width: 481px) and (max-width: 767px) {
   body { font-size: 0.95rem; }
   h1 { font-size: 1.6rem; }
@@ -68,7 +61,7 @@ h1, h2, h3 {
   }
 }
 
-/* 📲 Tablets (ex: iPad Mini, iPad Air) */
+/* Tablets (ex: iPad Mini, iPad Air) */
 @media (min-width: 768px) and (max-width: 991px) {
   body { font-size: 1rem; }
   h1 { font-size: 1.8rem; }
@@ -87,7 +80,7 @@ h1, h2, h3 {
   }
 }
 
-/* 💻 Notebooks pequenos e tablets horizontais */
+/*Notebooks pequenos e tablets horizontais */
 @media (min-width: 992px) and (max-width: 1199px) {
   body { font-size: 1.05rem; }
 
@@ -102,14 +95,15 @@ h1, h2, h3 {
   }
 }
 
-/* 🖥️ Monitores grandes */
+/* Monitores grandes */
 @media (min-width: 1200px) and (max-width: 1399px) {
   body { font-size: 1.1rem; }
 }
 
-/* 🖥️💎 Telas ultrawide ou 4K */
+/* Telas ultrawide ou 4K */
 @media (min-width: 1400px) {
   .container {
     max-width: 1320px;
   }
 }
+
