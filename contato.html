@@ -101,6 +101,14 @@
                                 </div>
                             </div>
 
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="number" placeholder="Your Number">
+                                    <label for="number">Seu Número</label>
+                                    <div class="invalid-feedback">Por favor, preencha seu número.</div>
+                                </div>
+                            </div>
+
                             <div class="col-12">
                                 <div class="col-12">
                                     <div class="form-control p-3" id="ratingbox">
@@ -153,7 +161,7 @@
     <!-- Copyright Start -->
     <div class="container-fluid rodape text-light py-4 wow fadeIn text-center" data-wow-delay="0.1s">
         <div class="container">
-            <p class="mb-0">ETEC Hortolândia 2025- &copy; Todos os direitos reservados.<br> Trabalho Acadêmico sem fins
+            <p class="mb-0">Aquarius 2025 &copy; Todos os direitos reservados.<br> Trabalho Acadêmico sem fins
                 lucrativos.</p>
         </div>
     </div>
@@ -188,6 +196,8 @@
             const campos = [
                 { id: "name", msg: "Por favor, preencha seu nome." },
                 { id: "email", msg: "Por favor, preencha seu email." },
+                { id: "number", msg: "Por favor, preencha seu número." },
+
             ];
 
             campos.forEach(campo => {
